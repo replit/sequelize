@@ -760,10 +760,7 @@ describe(Support.getTestDialectTeaser('Model'), () => {
           updateOnDuplicate: ['user_id', 'foreign_id', 'time_deleted']
         };
 
-        beforeEach(
-          async () =>
-            await Memberships.sync({ force: true })
-        );
+        beforeEach(() => Memberships.sync({ force: true }));
 
         it('should insert items with conflictWhere', async () => {
           const memberships = [...Array(10)].map((_, i) => ({
