@@ -47,6 +47,7 @@ sequelize.transaction(async trx => {
     conflictWhere: {
       foo: "abc",
       bar: "def"
-    }
+    },
+    conflictFields: ['foo', 'bar']
   });
 })
