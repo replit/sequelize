@@ -737,6 +737,11 @@ export interface UpsertOptions<TAttributes = any> extends Logging, Transactionab
    * Only supported in Postgres >= 9.5 and SQLite >= 3.24.0
    */
    conflictWhere?: WhereOptions<TAttributes>;
+   /**
+   * Optional override for the conflict fields in the ON CONFLICT part of the query.
+   * Only supported in Postgres >= 9.5 and SQLite >= 3.24.0
+  */
+  conflictFields?: (keyof TAttributes)[]
 }
 
 /**
